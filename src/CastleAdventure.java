@@ -26,6 +26,65 @@ public class CastleAdventure {
             System.out.println("Невірний код. Спробуйте ще.");
         }
 
-        // Інші частини пригоди додайте тут!
+        int[] magicBoard = {3, 6, 9, 12, 15, 18, 21, 24, 27, 30};
+        int sum = 0;
+
+        for (int i = 0; i < magicBoard.length; i++) {
+            sum += magicBoard[i];
+        }
+
+        System.out.println("Сума чисел на магічній дошці: " + sum);
+        System.out.println("Двері  до наступної кімнати відкрились!");
+
+        int[] dragonAttacks = {8, 16, 24, 32, 40};
+        boolean EvenNumber = true;
+
+        for (int attack : dragonAttacks) {
+            if (attack % 2 != 0) {
+                EvenNumber = false;
+                break;
+            }
+        }
+        if (EvenNumber) {
+            System.out.println("Атаки парні! Захист активовано!");
+        } else {
+            System.out.println("Увага! Непарна атака!");
+        }
+
+        System.out.print("Введи своє улюблене число: ");
+        int favorite = scanner.nextInt();
+        boolean found = false;
+
+        for (int i = 0; i < secretCode.length; i++) {
+            if (secretCode[i] == favorite) {
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            for (int i = 0; i < magicBoard.length; i++) {
+                if (magicBoard[i] == favorite) {
+                    found = true;
+                    break;
+                }
+            }
+        }
+
+        if (!found) {
+            for (int i = 0; i < dragonAttacks.length; i++) {
+                if (dragonAttacks[i] == favorite) {
+                    found = true;
+                    break;
+                }
+            }
+        }
+
+        if (found) {
+            System.out.println("Твій ключ знайдено!");
+        } else {
+            System.out.println("Треба більше магії...");
+        }
+// Інші частини пригоди додайте тут!
     }
 }
